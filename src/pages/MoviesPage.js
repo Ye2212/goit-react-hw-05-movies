@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchMoviesBySearch } from 'services/api';
+// import Container from 'components/Container/Container';
 import Searchbar from 'components/Searchbar/Searcbar';
 import MoviesList from 'components/MoviesList/MoviesList';
 
