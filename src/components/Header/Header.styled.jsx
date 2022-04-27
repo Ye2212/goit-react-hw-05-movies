@@ -5,13 +5,14 @@ import { MdOutlineMovieFilter } from 'react-icons/md';
 export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
-  height: 20px;
+  height: 60px;
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: black;
+  background-color: #000000d1;
+  font-family: 'Open Sans';
   // background-color: #2f364a;
-  padding: 40px 0 40px 0;
+  // padding: 20px 0 20px 0;
 `;
 
 export const LogoWrapper = styled.div`
@@ -20,20 +21,20 @@ export const LogoWrapper = styled.div`
   color: white;
   font-size: 20px;
   align-items: center;
-  transition: opacity 250ms;
-  :hover {
-    opacity: 0.8;
-  }
+  // transition: opacity 250ms;
+  // :hover {
+  //   opacity: 0.8;
+  // }
 `;
 
 export const Logo = styled(MdOutlineMovieFilter)`
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   transition: opacity 250ms;
   margin-right: 5px;
 
   // :hover {
-  //   opacity: 0.8;
+  //   opacity: 0.7;
   // }
 `;
 
@@ -50,7 +51,7 @@ export const NavigationItem = styled.li`
   }
 `;
 export const NavigationLink = styled(NavLink)`
-  font-size: 15px;
+  font-size: 12px;
   color: white;
   transition: opacity 250ms;
   text-decoration: none;
