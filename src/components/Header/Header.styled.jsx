@@ -46,6 +46,12 @@ export const NavigationList = styled.ul`
 
 export const NavigationItem = styled.li`
   margin-right: 25px;
+  transform: scale(1);
+  transition: transform 250ms;
+  :hover {
+    transform: scale(0.92);
+  }
+
   :last-child {
     margin-right: 0;
   }
@@ -55,9 +61,9 @@ export const NavigationLink = styled(NavLink)`
   color: white;
   transition: opacity 250ms;
   text-decoration: none;
-  // &.active {
-  //   text-decoration: underline;
-  // }
+  &.active {
+    text-decoration: underline;
+  }
   :hover {
     opacity: 0.8;
   }

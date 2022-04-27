@@ -10,8 +10,10 @@ export const FooterWrapper = styled.footer`
   right: 0;
   background-color: #f5f5f5;
   align-items: center;
-  justify-content: space-around;
+
+  // justify-content: space-around;
   font-size: 10px;
+  font-family: 'Open Sans';
 `;
 
 export const CopyrightData = styled.p`
@@ -21,6 +23,7 @@ export const CopyrightData = styled.p`
 export const DeveloperData = styled.div`
   display: flex;
   align-items: center;
+  margin: 0 auto;
 `;
 
 export const DeveloperLink = styled.link``;
@@ -30,8 +33,10 @@ export const Svg = styled(BsGithub)`
   color: #000000d1;
   width: 25px;
   height: 25px;
-  transition: opacity 250ms;
+  transform: scale(1);
+  transition: all 250ms;
   :hover {
     opacity: 0.8;
+    transform: scale(0.92);
   }
 `;

@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 export const ContainerBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 300px;
   margin: 0 auto;
-  padding: 0 10px 0 10px;
+  // padding: 0 10px 0 10px;
   @media (min-width: 768px) {
     width: 748px;
   }
