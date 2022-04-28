@@ -1,5 +1,5 @@
-import { Link, useParams } from 'react-router-dom';
-import { fetchMovieDetails, fetchMoviesReviews } from 'services/api';
+import { useParams } from 'react-router-dom';
+import { fetchMovieDetails } from 'services/api';
 import { useState, useEffect } from 'react';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
 
