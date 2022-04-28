@@ -3,16 +3,16 @@ import { List } from './MoviesList.styled';
 import MoviesListItem from 'components/MoviesListItem/MoviesListItem';
 
 function MoviesList({ movies }) {
-  console.log(movies);
   return (
     <List>
-      {movies.map(movie => {
+      {movies.map(({ id, original_title, poster_path, vote_average }) => {
         return (
           <MoviesListItem
-            key={movie.id}
-            id={movie.id}
-            title={movie.title || movie.original_title}
-            poster={movie.poster_path}
+            key={id}
+            id={id}
+            title={original_title}
+            poster={poster_path}
+            vote={vote_average}
           />
         );
       })}
