@@ -11,5 +11,5 @@ export const List = styled.ul`
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 80px;
+  padding: 50px 80px 90px;
 `;

@@ -11,7 +11,7 @@ function App() {
       <ToastContainer />
       <Header />
       <Routes>
-        <Route index element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
       </Routes>
       <Footer />
