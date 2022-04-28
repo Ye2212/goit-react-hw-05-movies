@@ -21,7 +21,7 @@ import { GoSearch } from 'react-icons/go';
 //   margin-bottom: 24px;
 // }`;
 export const Form = styled.form`
-  margin: 80px auto 20px;
+  margin: 20px auto 20px;
   display: flex;
   justify-content: center;
   align-items: center;

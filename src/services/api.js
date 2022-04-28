@@ -8,8 +8,8 @@ async function fetchMoviesBySearch(page, query) {
   return await axios.get(`${url}`).then(response => response.data);
 }
 
-async function fetchTrendingMovies(page) {
-  const trendingURL = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`;
+async function fetchTrendingMovies() {
+  const trendingURL = `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${1}`;
   return await axios.get(`${trendingURL}`).then(response => response.data);
 }
 

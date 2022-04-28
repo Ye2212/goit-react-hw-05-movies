@@ -6,8 +6,8 @@ export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
   height: 60px;
-  position: fixed;
-  top: 0;
+  // position: fixed;
+  // top: 0;
   z-index: 1000;
   background-color: #000000d1;
   font-family: 'Open Sans';
@@ -18,6 +18,7 @@ export const HeaderWrapper = styled.header`
 export const LogoWrapper = styled.div`
   display: flex;
   margin-right: 80px;
+  margin-left: 40px;
   color: white;
   font-size: 20px;
   align-items: center;

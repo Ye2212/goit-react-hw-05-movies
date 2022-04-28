@@ -6,25 +6,25 @@ import {
   NavigationItem,
   NavigationLink,
 } from './Header.styled';
-import Container from 'components/Container/Container';
+// import Container from 'components/Container/Container';
 
 function Header() {
   return (
     <HeaderWrapper>
-      <Container>
-        <LogoWrapper>
-          <Logo />
-          Filmoteka
-        </LogoWrapper>
-        <NavigationList>
-          <NavigationItem>
-            <NavigationLink to="/">Home</NavigationLink>
-          </NavigationItem>
-          <NavigationItem>
-            <NavigationLink to="/movies">Movies</NavigationLink>
-          </NavigationItem>
-        </NavigationList>
-      </Container>
+      {/* <Container> */}
+      <LogoWrapper>
+        <Logo />
+        Filmoteka
+      </LogoWrapper>
+      <NavigationList>
+        <NavigationItem>
+          <NavigationLink to="/">Home</NavigationLink>
+        </NavigationItem>
+        <NavigationItem>
+          <NavigationLink to="/movies">Movies</NavigationLink>
+        </NavigationItem>
+      </NavigationList>
+      {/* </Container> */}
     </HeaderWrapper>
   );
 }
