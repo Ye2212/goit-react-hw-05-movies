@@ -6,12 +6,10 @@ import {
   NavigationItem,
   NavigationLink,
 } from './Header.styled';
-// import Container from 'components/Container/Container';
 
 function Header() {
   return (
     <HeaderWrapper>
-      {/* <Container> */}
       <LogoWrapper>
         <Logo />
         Filmoteka
@@ -24,7 +22,6 @@ function Header() {
           <NavigationLink to="/movies">Movies</NavigationLink>
         </NavigationItem>
       </NavigationList>
-      {/* </Container> */}
     </HeaderWrapper>
   );
 }

@@ -12,6 +12,6 @@ export default function HomePage() {
       setMovies(mappedMovies);
     });
   }, []);
-  console.log(movies);
+  // console.log(movies);
   return movies && <MoviesList movies={movies} />;
 }
