@@ -1,14 +1,52 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { fetchMovieDetails, fetchMoviesReviews } from 'services/api';
+import { useState, useEffect } from 'react';
+import MovieInfo from '../components/MovieInfo/MovieInfo';
+
 export default function MovieDetailsPage() {
+  // const [reviews, setReviews] = useState(null);
+  const [details, setDetails] = useState(null);
+  const { movieId } = useParams();
+
+  // useEffect(() => {
+  //   fetchMoviesReviews(movieId).then(r => console.log(r.results));
+  // }, [movieId]);
+
+  useEffect(() => {
+    fetchMovieDetails(movieId).then(
+      // r => console.log(r)
+      ({
+        original_title,
+        genres,
+        overview,
+        poster_path,
+        release_date,
+        vote_average,
+      }) => {
+        const movieDetails = {
+          title: original_title,
+          genres: genres,
+          overview: overview,
+          poster: poster_path,
+          releaseDate: release_date,
+          vote: vote_average,
+        };
+        return setDetails(movieDetails);
+      }
+    );
+  }, [movieId, setDetails]);
+
+  console.log(details);
+
   return (
     <>
-      <button type="button">Go Back</button>
-      <section>
+      {details && <MovieInfo movieDetails={details} />}
+      {/* <section>
         <div>
           <img src="" alt="" />
         </div>
         <div>
-          <h2>Movie Title</h2>
+          <h2>{}</h2>
           <p>Vote</p>
           <h3>Overwiew</h3>
           <p>Overwiew</p>
@@ -25,7 +63,7 @@ export default function MovieDetailsPage() {
             <Link to="reviews">Reviews</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 }

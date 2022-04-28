@@ -13,7 +13,22 @@ async function fetchTrendingMovies() {
   return await axios.get(`${trendingURL}`).then(response => response.data);
 }
 
-export { fetchMoviesBySearch, fetchTrendingMovies };
+async function fetchMovieDetails(movieId) {
+  const detailsURL = `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`;
+  return await axios.get(`${detailsURL}`).then(response => response.data);
+}
+
+async function fetchMoviesReviews(movieId) {
+  const reviewsURL = `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
+  return await axios.get(`${reviewsURL}`).then(response => response.data);
+}
+
+export {
+  fetchMoviesBySearch,
+  fetchTrendingMovies,
+  fetchMovieDetails,
+  fetchMoviesReviews,
+};
 
 // export const fetchAPI = async (search, page) => {
 //   const URL = 'https://pixabay.com/api/';
