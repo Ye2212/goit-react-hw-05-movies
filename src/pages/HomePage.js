@@ -13,5 +13,5 @@ export default function HomePage() {
     });
   }, []);
   console.log(movies);
-  return <>{movies && <MoviesList movies={movies} />}</>;
+  return movies && <MoviesList movies={movies} />;
 }
