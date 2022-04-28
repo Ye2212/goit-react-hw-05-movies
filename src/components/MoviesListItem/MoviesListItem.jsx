@@ -1,19 +1,24 @@
 // import propTypes from 'prop-types';
-import { Item, Image, Title, Vote } from './MoviesListItem.styled';
-import Link from 'react-scroll/modules/components/Link';
+import { Link, useLocation } from 'react-router-dom';
+import { Item, Info, Image, Title, Vote } from './MoviesListItem.styled';
 
 function MoviesListItem({ id, title, poster, vote }) {
+  const location = useLocation();
+
   return (
     <Item>
-      <Link to={`movies/${id}`}>
-        <Title>{title ? title : 'No Title'}</Title>
+      <Link to={`/movies/${id}`} state={{ from: location }}>
+        <Info>
+          <Title>{title ? title : 'No Title'}</Title>
+          <Vote>Vote: {vote}</Vote>
+        </Info>
+
         <Image
           src={
             poster ? `https://image.tmdb.org/t/p/w500/${poster}` : 'No Poster'
           }
           alt={title}
         />
-        <Vote>Vote: {vote}</Vote>
       </Link>
     </Item>
   );

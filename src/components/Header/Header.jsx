@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   HeaderWrapper,
   LogoWrapper,
@@ -10,11 +11,15 @@ import {
 function Header() {
   return (
     <HeaderWrapper>
-      <LogoWrapper>
-        <Logo />
-        Filmoteka
-      </LogoWrapper>
       <NavigationList>
+        <NavigationItem>
+          <Link to="/">
+            <LogoWrapper>
+              <Logo />
+              Filmoteka
+            </LogoWrapper>
+          </Link>
+        </NavigationItem>
         <NavigationItem>
           <NavigationLink to="/">Home</NavigationLink>
         </NavigationItem>
