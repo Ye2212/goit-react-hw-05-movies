@@ -1,6 +1,6 @@
 // import { useLocation } from 'react-router-dom';
-import { Routes, Route, useParams } from 'react-router-dom';
-import ReviewsPage from 'pages/ReviewsPage';
+// import { Routes, Route, useParams } from 'react-router-dom';
+// import ReviewsPage from 'pages/ReviewsPage';
 
 import {
   MainWrapper,
