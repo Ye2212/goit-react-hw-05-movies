@@ -7,7 +7,7 @@ import MovieDetailsPage from 'pages/MovieDetailsPage';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// import Footer from './Footer/Footer';
+import Footer from './Footer/Footer';
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
         {/* <Route path="/*" element={<NotFoundPage />} /> */}
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
