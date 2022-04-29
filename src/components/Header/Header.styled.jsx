@@ -11,8 +11,6 @@ export const HeaderWrapper = styled.header`
   z-index: 1000;
   background-color: #000000d1;
   font-family: 'Open Sans';
-  // background-color: #2f364a;
-  // padding: 20px 0 20px 0;
 `;
 
 export const LogoWrapper = styled.div`
@@ -22,10 +20,6 @@ export const LogoWrapper = styled.div`
   color: white;
   font-size: 20px;
   align-items: center;
-  // transition: opacity 250ms;
-  // :hover {
-  //   opacity: 0.8;
-  // }
 `;
 
 export const Logo = styled(MdOutlineMovieFilter)`
@@ -33,10 +27,6 @@ export const Logo = styled(MdOutlineMovieFilter)`
   height: 30px;
   transition: opacity 250ms;
   margin-right: 5px;
-
-  // :hover {
-  //   opacity: 0.7;
-  // }
 `;
 
 export const NavigationList = styled.ul`

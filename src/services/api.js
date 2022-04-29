@@ -18,6 +18,11 @@ async function fetchMovieDetails(movieId) {
   return await axios.get(`${detailsURL}`).then(response => response.data);
 }
 
+async function fetchMovieCast(movieId) {
+  const castURL = `${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`;
+  return await axios.get(`${castURL}`).then(response => response.data);
+}
+
 async function fetchMoviesReviews(movieId) {
   const reviewsURL = `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`;
   return await axios.get(`${reviewsURL}`).then(response => response.data);
@@ -27,6 +32,7 @@ export {
   fetchMoviesBySearch,
   fetchTrendingMovies,
   fetchMovieDetails,
+  fetchMovieCast,
   fetchMoviesReviews,
 };
 

@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
+import {
+  MdOutlineArrowBackIosNew,
+  MdOutlineArrowForwardIos,
+} from 'react-icons/md';
 
 export const MainWrapper = styled.div`
   padding: 0 100px;
@@ -75,7 +79,11 @@ export const GoBackBtn = styled.button`
   border: none;
   border-radius: 4px;
   margin-top: 100px;
-  transition: opacity 250ms;
+  transform: scale(1);
+  transition: all 250ms;
+  :hover {
+    transform: scale(0.92);
+  }
   :hover {
     opacity: 0.8;
   }
@@ -87,7 +95,6 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: start;
   align-items: center;
-  // width: 100%;
   height: 40px;
   background-color: #000000d1;
   padding: 0 20px;
@@ -100,12 +107,31 @@ export const AditionalText = styled.p`
 `;
 export const ExtraPagesList = styled.ul``;
 export const Item = styled.li`
+  display: block;
   margin-bottom: 8px;
+  align-items: center;
+  // transform: scale(1);
+  transition: all 250ms;
+  :hover {
+    opacity: 0.8;
+  }
   :last-child {
     margin-bottom: 0;
+    border-bottom: 1px solid black;
   }
 `;
 export const StyledLink = styled(Link)`
   font-size: 18px;
   color: #000000d1;
+  display: block;
+  margin-bottom: 8px;
+`;
+
+export const ArrowBack = styled(MdOutlineArrowBackIosNew)`
+  margin-right: 5px;
+`;
+
+export const ArrowForward = styled(MdOutlineArrowForwardIos)`
+  margin-left: 5px;
+  height: 13px;
 `;

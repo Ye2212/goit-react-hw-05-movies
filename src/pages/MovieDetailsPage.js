@@ -1,16 +1,76 @@
 import { useParams } from 'react-router-dom';
-import { fetchMovieDetails } from 'services/api';
+import {
+  fetchMovieDetails,
+  fetchMovieCast,
+  fetchMoviesReviews,
+} from 'services/api';
 import { useState, useEffect } from 'react';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
+// import ReviewsPage from './ReviewsPage';
+import Casts from 'components/Casts/Casts';
+import Reviews from 'components/Reviews/Reviews';
 
 export default function MovieDetailsPage() {
-  // const [reviews, setReviews] = useState(null);
   const [details, setDetails] = useState(null);
   const { movieId } = useParams();
 
-  // useEffect(() => {
-  //   fetchMoviesReviews(movieId).then(r => console.log(r.results));
-  // }, [movieId]);
+  const [casts, setCasts] = useState(null);
+  // const movieId = useParams();
+
+  const [reviews, setReviews] = useState(null);
+  // const movieId = useParams();
+
+  // ===================================================================================================================================
+
+  //   adult: false
+  // cast_id: 9
+  // character: "Laura Biel"
+  // credit_id: "609e72f701432500795c584f"
+  // gender: 1
+  // id: 2511949
+  // known_for_department: "Acting"
+  // name: "Anna-Maria Sieklucka"
+  // order: 0
+  // original_name: "Anna-Maria Sieklucka"
+  // popularity: 32.714
+  //   profile_path: "/eoimM6DQ5ngqSAYaXHrIADHU52C.jpg"
+
+  useEffect(() => {
+    fetchMovieCast(movieId).then(r => {
+      const mappedCasts = [];
+      console.log(r.cast);
+      r.cast.map(({ id, original_name, profile_path }) => {
+        const cast = {
+          id: id,
+          name: original_name,
+          photo: profile_path,
+        };
+        return mappedCasts.push(cast);
+      });
+      setCasts(mappedCasts);
+    });
+  }, [movieId]);
+  console.log(casts);
+
+  // ===================================================================================================================================
+
+  useEffect(() => {
+    fetchMoviesReviews(movieId).then(r => {
+      const mappedReviews = [];
+      r.results.map(({ author, content, id }) => {
+        const authorReview = {
+          id: id,
+          author: author,
+          review: content,
+        };
+        return mappedReviews.push(authorReview);
+      });
+      setReviews(mappedReviews);
+    });
+  }, [movieId]);
+  // console.log(reviews);
+
+  // ===================================================================================================================================
 
   useEffect(() => {
     fetchMovieDetails(movieId).then(
@@ -35,35 +95,13 @@ export default function MovieDetailsPage() {
       }
     );
   }, [movieId, setDetails]);
-
-  console.log(details);
+  // console.log(details);
 
   return (
     <>
       {details && <MovieInfo movieDetails={details} />}
-      {/* <section>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <h2>{}</h2>
-          <p>Vote</p>
-          <h3>Overwiew</h3>
-          <p>Overwiew</p>
-          <h3>Genres</h3>
-        </div>
-      </section>
-      <div>
-        <p>Aditional Information</p>
-        <ul>
-          <li>
-            <Link to="cast">Cast</Link>
-          </li>
-          <li>
-            <Link to="reviews">Reviews</Link>
-          </li>
-        </ul>
-      </div> */}
+      {casts && <Casts casts={casts} />}
+      {reviews && <Reviews reviews={reviews} />}
     </>
   );
 }

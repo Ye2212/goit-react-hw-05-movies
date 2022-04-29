@@ -1,4 +1,7 @@
 // import { useLocation } from 'react-router-dom';
+import { Routes, Route, useParams } from 'react-router-dom';
+import ReviewsPage from 'pages/ReviewsPage';
+
 import {
   MainWrapper,
   Section,
@@ -15,12 +18,14 @@ import {
   ExtraPagesList,
   Item,
   StyledLink,
+  ArrowBack,
+  ArrowForward,
 } from './MovieInfo.styled';
 export default function MovieInfo({ movieDetails }) {
   const { title, genres, poster, overview, releaseDate, vote } = movieDetails;
   // const location = useLocation();
   console.log(genres.map(g => g.name));
-  const genresInfo = genres.map(g => g.name);
+  const genresInfo = genres.map(g => g.name).join(', ');
   return (
     <MainWrapper>
       <Section>
@@ -39,11 +44,15 @@ export default function MovieInfo({ movieDetails }) {
           <SubTitle>Overwiew:</SubTitle>
           <InfoText> {overview}</InfoText>
           <SubTitle>Genres:</SubTitle>
-          <InfoText> {genresInfo + ''}</InfoText>
+          <InfoText> {genresInfo}</InfoText>
 
-          <GoBackBtn>Go Back</GoBackBtn>
+          <GoBackBtn>
+            <ArrowBack />
+            Go Back
+          </GoBackBtn>
         </InfoThumb>
       </Section>
+
       <ExtraInfo>
         <Wrapper>
           <AditionalText>Aditional Information</AditionalText>
@@ -51,13 +60,20 @@ export default function MovieInfo({ movieDetails }) {
 
         <ExtraPagesList>
           <Item>
-            <StyledLink to="cast">Cast</StyledLink>
+            <StyledLink to="cast">
+              Cast
+              <ArrowForward />
+            </StyledLink>
           </Item>
           <Item>
-            <StyledLink to="reviews">Reviews</StyledLink>
+            <StyledLink to="reviews">
+              Reviews
+              <ArrowForward />
+            </StyledLink>
           </Item>
         </ExtraPagesList>
       </ExtraInfo>
+      {/* <Outlet /> */}
     </MainWrapper>
   );
 }
