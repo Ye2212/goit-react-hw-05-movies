@@ -22,19 +22,6 @@ export default function MovieDetailsPage() {
 
   // ===================================================================================================================================
 
-  //   adult: false
-  // cast_id: 9
-  // character: "Laura Biel"
-  // credit_id: "609e72f701432500795c584f"
-  // gender: 1
-  // id: 2511949
-  // known_for_department: "Acting"
-  // name: "Anna-Maria Sieklucka"
-  // order: 0
-  // original_name: "Anna-Maria Sieklucka"
-  // popularity: 32.714
-  //   profile_path: "/eoimM6DQ5ngqSAYaXHrIADHU52C.jpg"
-
   useEffect(() => {
     fetchMovieCast(movieId).then(r => {
       const mappedCasts = [];
