@@ -40,4 +40,9 @@ export const ActorName = styled.h3`
   color: #000000d1;
 `;
 
-export const NoInformationText = styled.p``;
+export const NoInformationText = styled.p`
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-weight: 500;
+`;

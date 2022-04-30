@@ -1,4 +1,4 @@
-import dedaultImg from '../../images/defaultImg.jpg';
+import defaultImg from '../../images/defaultImg.jpg';
 import { CastsList, Item, Photo, ActorName } from './Cast.styled';
 
 export default function Cast({ cast }) {
@@ -13,7 +13,7 @@ export default function Cast({ cast }) {
                 alt={name}
               />
             ) : (
-              <img src={dedaultImg} alt={name} width={300} height={450} />
+              <img src={defaultImg} alt={name} width={300} height={450} />
             )}
 
             <ActorName>{name}</ActorName>

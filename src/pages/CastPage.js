@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'services/api';
 import Cast from 'components/Cast/Cast';
+import { NoInformationText } from 'components/Cast/Cast.styled';
 
 export default function CastPage() {
   const { movieId } = useParams();
@@ -22,5 +23,10 @@ export default function CastPage() {
     });
   }, [movieId]);
   console.log(cast);
-  return cast && <Cast cast={cast} />;
+
+  return cast && cast.length > 0 ? (
+    <Cast cast={cast} />
+  ) : (
+    <NoInformationText>Sorry, we have no information here</NoInformationText>
+  );
 }
