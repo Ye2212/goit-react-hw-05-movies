@@ -5,7 +5,6 @@ export const FooterWrapper = styled.footer`
   display: block;
   width: 100%;
   height: 40px;
-  position: fixed;
 
   bottom: 0;
   right: 0;
@@ -14,7 +13,7 @@ export const FooterWrapper = styled.footer`
 
   // justify-content: space-around;
   font-size: 10px;
-  font-family: 'Open Sans';
+  font-family: 'Roboto';
 `;
 
 export const CopyrightData = styled.p`

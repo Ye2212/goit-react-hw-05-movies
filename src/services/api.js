@@ -3,8 +3,8 @@ import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '07e84016aeec599a5623106dff9619bb';
 
-async function fetchMoviesBySearch(page, query) {
-  const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&page=${page}&query=${query}`;
+async function fetchMoviesBySearch(query) {
+  const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=1`;
   return await axios.get(`${url}`).then(response => response.data);
 }
 

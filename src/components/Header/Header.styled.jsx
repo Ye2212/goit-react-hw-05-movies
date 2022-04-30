@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import { MdOutlineMovieFilter } from 'react-icons/md';
+import { GiFilmSpool } from 'react-icons/gi';
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
   // top: 0;
   z-index: 1000;
   background-color: #000000d1;
-  font-family: 'Open Sans';
+  font-family: 'Roboto';
 `;
 
 export const LogoWrapper = styled.div`
@@ -22,11 +22,12 @@ export const LogoWrapper = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled(MdOutlineMovieFilter)`
+export const Logo = styled(GiFilmSpool)`
   width: 30px;
   height: 30px;
   transition: opacity 250ms;
   margin-right: 5px;
+  color: white;
 `;
 
 export const NavigationList = styled.ul`
@@ -48,7 +49,7 @@ export const NavigationItem = styled.li`
   }
 `;
 export const NavigationLink = styled(NavLink)`
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   transition: opacity 250ms;
   text-decoration: none;

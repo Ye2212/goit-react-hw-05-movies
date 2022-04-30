@@ -33,9 +33,11 @@ export const Image = styled.img`
 export const Title = styled.h2`
   font-size: 12px;
   font-weight: 700;
+  color: #000000d1;
   // margin-bottom: 15px;
 `;
 export const Vote = styled.p`
   font-size: 12px;
   font-weight: 700;
+  color: #000000d1;
 `;

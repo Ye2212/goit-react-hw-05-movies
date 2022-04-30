@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const List = styled.ul`
+  min-height: 100vh;
   display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -11,5 +12,5 @@ export const List = styled.ul`
   list-style: none;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px 80px 90px;
+  padding: 50px 80px 50px;
 `;
