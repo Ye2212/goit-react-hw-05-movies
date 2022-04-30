@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMoviesReviews } from 'services/api';
+import Reviews from 'components/Reviews/Reviews';
 
 export default function ReviewsPage() {
   const [reviews, setReviews] = useState(null);
-  console.log(reviews);
-  const movieId = useParams();
-  useEffect(() => {
-    fetchMoviesReviews(movieId)
-      .then(r => console.log(r.results))
-      .then(setReviews);
-  }, [movieId]);
+  const { movieId } = useParams();
 
-  return <h2> Reviews </h2>;
+  useEffect(() => {
+    fetchMoviesReviews(movieId).then(r => {
+      const mappedReviews = [];
+      r.results.map(({ author, content, id }) => {
+        const authorReview = {
+          id: id,
+          author: author,
+          review: content,
+        };
+        return mappedReviews.push(authorReview);
+      });
+      setReviews(mappedReviews);
+    });
+  }, [movieId]);
+  return reviews && <Reviews reviews={reviews} />;
 }

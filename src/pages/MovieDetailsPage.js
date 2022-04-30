@@ -1,60 +1,34 @@
-import { useParams } from 'react-router-dom';
-import {
-  fetchMovieDetails,
-  fetchMovieCast,
-  fetchMoviesReviews,
-} from 'services/api';
+import { useParams, Routes, Route } from 'react-router-dom';
+import { fetchMovieDetails } from 'services/api';
 import { useState, useEffect } from 'react';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
-// import ReviewsPage from './ReviewsPage';
-import Casts from 'components/Casts/Casts';
-import Reviews from 'components/Reviews/Reviews';
+import CastPage from './CastPage';
+import ReviewsPage from './ReviewsPage';
+// import Reviews from 'components/Reviews/Reviews';
 
 export default function MovieDetailsPage() {
   const [details, setDetails] = useState(null);
   const { movieId } = useParams();
 
-  const [casts, setCasts] = useState(null);
-  // const movieId = useParams();
-
-  const [reviews, setReviews] = useState(null);
-  // const movieId = useParams();
-
   // ===================================================================================================================================
 
-  useEffect(() => {
-    fetchMovieCast(movieId).then(r => {
-      const mappedCasts = [];
-      console.log(r.cast);
-      r.cast.map(({ id, original_name, profile_path }) => {
-        const cast = {
-          id: id,
-          name: original_name,
-          photo: profile_path,
-        };
-        return mappedCasts.push(cast);
-      });
-      setCasts(mappedCasts);
-    });
-  }, [movieId]);
-  console.log(casts);
+  // const [reviews, setReviews] = useState(null);
+  // // const movieId = useParams();
 
-  // ===================================================================================================================================
-
-  useEffect(() => {
-    fetchMoviesReviews(movieId).then(r => {
-      const mappedReviews = [];
-      r.results.map(({ author, content, id }) => {
-        const authorReview = {
-          id: id,
-          author: author,
-          review: content,
-        };
-        return mappedReviews.push(authorReview);
-      });
-      setReviews(mappedReviews);
-    });
-  }, [movieId]);
+  // useEffect(() => {
+  //   fetchMoviesReviews(movieId).then(r => {
+  //     const mappedReviews = [];
+  //     r.results.map(({ author, content, id }) => {
+  //       const authorReview = {
+  //         id: id,
+  //         author: author,
+  //         review: content,
+  //       };
+  //       return mappedReviews.push(authorReview);
+  //     });
+  //     setReviews(mappedReviews);
+  //   });
+  // }, [movieId]);
   // console.log(reviews);
 
   // ===================================================================================================================================
@@ -87,8 +61,14 @@ export default function MovieDetailsPage() {
   return (
     <>
       {details && <MovieInfo movieDetails={details} />}
-      {casts && <Casts casts={casts} />}
-      {reviews && <Reviews reviews={reviews} />}
+      {/* {reviews && <Reviews reviews={reviews} />} */}
+
+      {/* <Suspense> */}
+      <Routes>
+        <Route path="cast" element={<CastPage />} />
+        <Route path="reviews" element={<ReviewsPage />} />
+      </Routes>
+      {/* </Suspense> */}
     </>
   );
 }

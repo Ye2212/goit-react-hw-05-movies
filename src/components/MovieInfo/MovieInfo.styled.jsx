@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
@@ -120,7 +120,7 @@ export const Item = styled.li`
     border-bottom: 1px solid black;
   }
 `;
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(NavLink)`
   font-size: 18px;
   color: #000000d1;
   display: block;
