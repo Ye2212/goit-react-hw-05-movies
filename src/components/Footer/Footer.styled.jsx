@@ -7,7 +7,7 @@ export const FooterWrapper = styled.footer`
   height: 40px;
 
   bottom: 0;
-  right: 0;
+  left: 0;
   background-color: #f5f5f5;
   align-items: center;
 
@@ -16,9 +16,7 @@ export const FooterWrapper = styled.footer`
   font-family: 'Roboto';
 `;
 
-export const CopyrightData = styled.p`
-  // margin-left: auto;
-`;
+export const CopyrightData = styled.p``;
 
 export const DeveloperData = styled.div`
   display: flex;
