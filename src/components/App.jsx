@@ -5,7 +5,7 @@ import MoviesPage from 'pages/MoviesPage';
 import MovieDetailsPage from 'pages/MovieDetailsPage';
 // import NotFoundPage from '../pages/NotFoundPage';
 import 'react-toastify/dist/ReactToastify.css';
-import Footer from './Footer/Footer';
+// import Footer from './Footer/Footer';
 
 function App() {
   return (
