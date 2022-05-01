@@ -21,7 +21,8 @@ import { GoSearch } from 'react-icons/go';
 //   margin-bottom: 24px;
 // }`;
 export const Form = styled.form`
-  margin: 20px auto 20px;
+  margin: 0 auto;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +60,7 @@ export const Input = styled.input`
   font-size: 20px;
   border: none;
   // background-color: #f2f2f2;
-  border-bottom: 0.5px solid black;
+  border-bottom: 0.5px solid #00000073;
   font: inherit;
   font-size: inherit;
   outline: none;

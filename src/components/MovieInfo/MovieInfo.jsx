@@ -1,7 +1,5 @@
-// import { useLocation } from 'react-router-dom';
-// import { Routes, Route, useParams } from 'react-router-dom';
-// import ReviewsPage from 'pages/ReviewsPage';
-
+import { useLocation } from 'react-router-dom';
+import GoBackButton from 'components/GoBackBtn/GoBackBtn';
 import {
   MainWrapper,
   Section,
@@ -11,19 +9,17 @@ import {
   Title,
   SubTitle,
   InfoText,
-  GoBackBtn,
   ExtraInfo,
   Wrapper,
   AditionalText,
   ExtraPagesList,
   Item,
   StyledLink,
-  ArrowBack,
   ArrowForward,
 } from './MovieInfo.styled';
 export default function MovieInfo({ movieDetails }) {
   const { title, genres, poster, overview, releaseDate, vote } = movieDetails;
-  // const location = useLocation();
+  const location = useLocation();
   console.log(genres.map(g => g.name));
   const genresInfo = genres.map(g => g.name).join(', ');
   return (
@@ -46,10 +42,7 @@ export default function MovieInfo({ movieDetails }) {
           <SubTitle>Genres:</SubTitle>
           <InfoText> {genresInfo}</InfoText>
 
-          <GoBackBtn>
-            <ArrowBack />
-            Go Back
-          </GoBackBtn>
+          <GoBackButton location={location} />
         </InfoThumb>
       </Section>
 

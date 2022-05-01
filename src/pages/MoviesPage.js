@@ -27,14 +27,15 @@ export default function MoviesPage() {
     e.preventDefault();
 
     const newQuery = e.target.elements.query.value.toLowerCase();
+    // console.log(newQuery);
     if (newQuery === '') {
-      toast.error("Please, enter coorrect film's name");
+      toast.error("Please, enter correct movie's name");
       resetForm();
       return;
     }
     setSearchParams({ query: newQuery });
-    // e.currentTrget.reset();
   };
+
   useEffect(() => {
     if (searchParams.get('query') !== null) {
       const newQuery = searchParams.get('query');
@@ -75,6 +76,7 @@ export default function MoviesPage() {
           onChange={onChangeQuery}
         ></Input>
       </Form>
+
       {movies && <MoviesList movies={movies} />}
     </>
   );
