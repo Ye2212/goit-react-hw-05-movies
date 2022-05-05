@@ -1,9 +1,9 @@
-import { useParams, Routes, Route } from 'react-router-dom';
+import { useParams, Outlet } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/api';
 import { useState, useEffect } from 'react';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
-import CastPage from './CastPage';
-import ReviewsPage from './ReviewsPage';
+// import CastPage from './CastPage';
+// import ReviewsPage from './ReviewsPage';
 // import Reviews from 'components/Reviews/Reviews';
 
 export default function MovieDetailsPage() {
@@ -62,12 +62,12 @@ export default function MovieDetailsPage() {
     <>
       {details && <MovieInfo movieDetails={details} />}
       {/* {reviews && <Reviews reviews={reviews} />} */}
-
+      <Outlet />
       {/* <Suspense> */}
-      <Routes>
+      {/* <Routes>
         <Route path="cast" element={<CastPage />} />
         <Route path="reviews" element={<ReviewsPage />} />
-      </Routes>
+      </Routes> */}
       {/* </Suspense> */}
     </>
   );

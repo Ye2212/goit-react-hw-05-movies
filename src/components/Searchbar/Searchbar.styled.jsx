@@ -1,25 +1,6 @@
 import styled from '@emotion/styled';
 import { GoSearch } from 'react-icons/go';
 
-// export const Header = styled.header`
-// top: 0;
-// left: 0;
-// position: sticky;
-// z-index: 99;
-// display: flex;
-// justify-content: center;
-// align-items: center;
-// min-height: 90px;
-// padding-right: 24px;
-// padding-left: 24px;
-// padding-top: 12px;
-// padding-bottom: 12px;
-// color: #fff;
-// background-color: #24292f;
-// box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.3),
-//   0px 4px 5px 0px rgba(0, 0, 0, 0.18), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-//   margin-bottom: 24px;
-// }`;
 export const Form = styled.form`
   margin: 0 auto;
   padding-top: 20px;

@@ -30,7 +30,7 @@ export default function MoviesPage() {
     // console.log(newQuery);
     if (newQuery === '') {
       toast.error("Please, enter correct movie's name");
-      resetForm();
+      // resetsForm();
       return;
     }
     setSearchParams({ query: newQuery });
@@ -46,19 +46,6 @@ export default function MoviesPage() {
       });
     }
   }, [searchParams]);
-  //   fetchMoviesBySearch(query).then(({ results }) => {
-  //     const movies = [];
-  //     results.map(({ id, original_title, poster_path }) => {
-  //       const movie = {
-  //         id,
-  //         title: original_title,
-  //         poster: poster_path,
-  //       };
-  //       return movies.push(movie);
-  //     });
-  //     setMovies(movies);
-  //   });
-  // }
 
   return (
     <>

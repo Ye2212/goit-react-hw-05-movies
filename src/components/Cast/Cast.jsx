@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import defaultImg from '../../images/defaultImg.jpg';
 import { CastsList, Item, Photo, ActorName } from './Cast.styled';
 
@@ -23,3 +24,12 @@ export default function Cast({ cast }) {
     </>
   );
 }
+Cast.propTypes = {
+  cast: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number,
+      name: propTypes.string,
+      photo: propTypes.string,
+    })
+  ).isRequired,
+};

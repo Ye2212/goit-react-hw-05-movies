@@ -1,4 +1,4 @@
-// import propTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { List } from './MoviesList.styled';
 import MoviesListItem from 'components/MoviesListItem/MoviesListItem';
 
@@ -19,15 +19,14 @@ function MoviesList({ movies }) {
     </List>
   );
 }
-// ImageGallery.propTypes = {
-//   images: propTypes.arrayOf(
-//     propTypes.exact({
-//       id: propTypes.number.isRequired,
-//       largeImageURL: propTypes.string.isRequired,
-//       webformatURL: propTypes.string.isRequired,
-//     })
-//   ).isRequired,
-//   toggleModal: propTypes.func.isRequired,
-//   openModalImg: propTypes.func.isRequired,
-// };
+MoviesList.propTypes = {
+  movies: propTypes.arrayOf(
+    propTypes.exact({
+      id: propTypes.number.isRequired,
+      original_title: propTypes.string.isRequired,
+      poster_path: propTypes.string.isRequired,
+      vote_average: propTypes.number.isRequired,
+    })
+  ),
+};
 export default MoviesList;

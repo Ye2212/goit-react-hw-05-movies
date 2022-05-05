@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import GoBackButton from 'components/GoBackBtn/GoBackBtn';
 import {
@@ -20,7 +21,8 @@ import {
 export default function MovieInfo({ movieDetails }) {
   const { title, genres, poster, overview, releaseDate, vote } = movieDetails;
   const location = useLocation();
-  console.log(genres.map(g => g.name));
+  console.log(location);
+  // console.log(genres.map(g => g.name));
   const genresInfo = genres.map(g => g.name).join(', ');
   return (
     <MainWrapper>
@@ -66,7 +68,21 @@ export default function MovieInfo({ movieDetails }) {
           </Item>
         </ExtraPagesList>
       </ExtraInfo>
-      {/* <Outlet /> */}
     </MainWrapper>
   );
 }
+MovieInfo.propTypes = {
+  movieDetails: propTypes.shape({
+    title: propTypes.string,
+    genres: propTypes.arrayOf(
+      propTypes.shape({
+        id: propTypes.number,
+        name: propTypes.string,
+      })
+    ),
+    poster: propTypes.string,
+    overview: propTypes.string,
+    releaseDate: propTypes.string,
+    vote: propTypes.number,
+  }),
+};

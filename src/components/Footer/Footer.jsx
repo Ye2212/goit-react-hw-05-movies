@@ -4,7 +4,6 @@ import { DeveloperData, FooterWrapper, Svg } from './Footer.styled';
 function Footer() {
   return (
     <FooterWrapper>
-      {/* <Container> */}
       <DeveloperData>
         © 2022 | All Rights Reserved | Developed by
         <a
@@ -15,7 +14,6 @@ function Footer() {
           <Svg />
         </a>
       </DeveloperData>
-      {/* </Container> */}
     </FooterWrapper>
   );
 }

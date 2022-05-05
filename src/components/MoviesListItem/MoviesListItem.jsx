@@ -1,4 +1,4 @@
-// import propTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import { Item, Info, Image, Title, Vote } from './MoviesListItem.styled';
 
@@ -23,10 +23,10 @@ function MoviesListItem({ id, title, poster, vote }) {
     </Item>
   );
 }
-// ImageGalleryItem.propTypes = {
-//     smallImage: propTypes.string.isRequired,
-//     largeImage: propTypes.string.isRequired,
-//     toggleModal: propTypes.func.isRequired,
-//     openModalImg: propTypes.func.isRequired,
-// };
+MoviesListItem.propTypes = {
+  id: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+  poster: propTypes.string.isRequired,
+  vote: propTypes.number.isRequired,
+};
 export default MoviesListItem;

@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import { ReviewsList, Item, Author, ReviewContent } from './Reviews.styled';
 
 export default function Reviews({ reviews }) {
@@ -15,3 +16,12 @@ export default function Reviews({ reviews }) {
     </>
   );
 }
+Reviews.propTypes = {
+  reviews: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number,
+      author: propTypes.string,
+      review: propTypes.string,
+    })
+  ).isRequired,
+};
