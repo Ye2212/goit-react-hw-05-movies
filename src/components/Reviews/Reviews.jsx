@@ -19,7 +19,7 @@ export default function Reviews({ reviews }) {
 Reviews.propTypes = {
   reviews: propTypes.arrayOf(
     propTypes.shape({
-      id: propTypes.number,
+      id: propTypes.string,
       author: propTypes.string,
       review: propTypes.string,
     })

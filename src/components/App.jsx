@@ -5,9 +5,9 @@ import MainContent from './Main/Main';
 // import HomePage from 'pages/HomePage';
 // import MoviesPage from 'pages/MoviesPage';
 // import MovieDetailsPage from 'pages/MovieDetailsPage';
+// import NotFoundPage from '../pages/NotFoundPage';
 import Loader from '../components/Loader/Loader';
 import Footer from './Footer/Footer';
-// import NotFoundPage from '../pages/NotFoundPage';
 const HomePage = lazy(() => import('../pages/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route path="/*" element={<HomePage />} />
             <Route path="movies" element={<MoviesPage />} />
-            <Route path="movies/:movieId/*" element={<MovieDetailsPage />}>
+            <Route path="movies/:movieId" element={<MovieDetailsPage />}>
               <Route path="cast" element={<CastPage />} />
               <Route path="reviews" element={<ReviewsPage />} />
             </Route>
