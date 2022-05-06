@@ -4,6 +4,7 @@ import { Item, Info, Image, Title, Vote } from './MoviesListItem.styled';
 
 function MoviesListItem({ id, title, poster, vote }) {
   const location = useLocation();
+  // console.log(location);
 
   return (
     <Item>

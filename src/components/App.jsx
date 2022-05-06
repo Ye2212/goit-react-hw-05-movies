@@ -1,13 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import Header from './Header/Header';
-import MainContent from './Main/Main';
+import Layout from './Layout/Layout';
 // import HomePage from 'pages/HomePage';
 // import MoviesPage from 'pages/MoviesPage';
 // import MovieDetailsPage from 'pages/MovieDetailsPage';
-// import NotFoundPage from '../pages/NotFoundPage';
+import NotFoundPage from '../pages/NotFoundPage';
 import Loader from '../components/Loader/Loader';
-import Footer from './Footer/Footer';
 const HomePage = lazy(() => import('../pages/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
@@ -17,21 +15,19 @@ const ReviewsPage = lazy(() => import('../pages/ReviewsPage'));
 function App() {
   return (
     <>
-      <Header />
-      <MainContent>
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route path="/*" element={<HomePage />} />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
             <Route path="movies" element={<MoviesPage />} />
             <Route path="movies/:movieId" element={<MovieDetailsPage />}>
               <Route path="cast" element={<CastPage />} />
               <Route path="reviews" element={<ReviewsPage />} />
             </Route>
-            {/* <Route path="*" element={<NotFoundPage />} /> */}
-          </Routes>
-        </Suspense>
-      </MainContent>
-      <Footer />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </>
   );
 }

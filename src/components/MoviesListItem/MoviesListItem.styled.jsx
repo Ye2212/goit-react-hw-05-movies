@@ -23,6 +23,7 @@ export const Info = styled.div`
 `;
 export const Image = styled.img`
   width: 300px;
+  height: 440px;
   margin-bottom: 10px;
   @media (min-width: 768px) {
     width: 350px;

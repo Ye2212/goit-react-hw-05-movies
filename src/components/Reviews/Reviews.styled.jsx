@@ -22,6 +22,7 @@ export const ReviewContent = styled.span`
 export const NoReviewText = styled.p`
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
   font-weight: 500;
+  font-size: 25px;
 `;

@@ -2,36 +2,10 @@ import { useParams, Outlet } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/api';
 import { useState, useEffect } from 'react';
 import MovieInfo from '../components/MovieInfo/MovieInfo';
-// import CastPage from './CastPage';
-// import ReviewsPage from './ReviewsPage';
-// import Reviews from 'components/Reviews/Reviews';
 
 export default function MovieDetailsPage() {
   const [details, setDetails] = useState(null);
   const { movieId } = useParams();
-
-  // ===================================================================================================================================
-
-  // const [reviews, setReviews] = useState(null);
-  // // const movieId = useParams();
-
-  // useEffect(() => {
-  //   fetchMoviesReviews(movieId).then(r => {
-  //     const mappedReviews = [];
-  //     r.results.map(({ author, content, id }) => {
-  //       const authorReview = {
-  //         id: id,
-  //         author: author,
-  //         review: content,
-  //       };
-  //       return mappedReviews.push(authorReview);
-  //     });
-  //     setReviews(mappedReviews);
-  //   });
-  // }, [movieId]);
-  // console.log(reviews);
-
-  // ===================================================================================================================================
 
   useEffect(() => {
     fetchMovieDetails(movieId).then(
@@ -61,14 +35,7 @@ export default function MovieDetailsPage() {
   return (
     <>
       {details && <MovieInfo movieDetails={details} />}
-      {/* {reviews && <Reviews reviews={reviews} />} */}
       <Outlet />
-      {/* <Suspense> */}
-      {/* <Routes>
-        <Route path="cast" element={<CastPage />} />
-        <Route path="reviews" element={<ReviewsPage />} />
-      </Routes> */}
-      {/* </Suspense> */}
     </>
   );
 }

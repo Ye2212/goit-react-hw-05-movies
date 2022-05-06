@@ -28,9 +28,8 @@ export default function MoviesPage() {
 
     const newQuery = e.target.elements.query.value.toLowerCase();
     // console.log(newQuery);
-    if (newQuery === '') {
+    if (newQuery.trim() === '') {
       toast.error("Please, enter correct movie's name");
-      // resetsForm();
       return;
     }
     setSearchParams({ query: newQuery });
