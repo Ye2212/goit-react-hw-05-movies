@@ -10,7 +10,7 @@ const NotFoundText = styled.p`
   font-size: 25px;
 `;
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <NotFoundText>
       404 Page not found, please go back to the <Link to="/">HOME PAGE</Link>{' '}

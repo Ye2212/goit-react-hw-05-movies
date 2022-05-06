@@ -5,7 +5,7 @@ import Layout from './Layout/Layout';
 // import MoviesPage from 'pages/MoviesPage';
 // import MovieDetailsPage from 'pages/MovieDetailsPage';
 import NotFoundPage from '../pages/NotFoundPage';
-import Loader from '../components/Loader/Loader';
+import Loader from './LoaderBallTriangle/LoaderBallTriangle';
 const HomePage = lazy(() => import('../pages/HomePage'));
 const MoviesPage = lazy(() => import('../pages/MoviesPage'));
 const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
