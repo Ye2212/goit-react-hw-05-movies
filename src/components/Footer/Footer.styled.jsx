@@ -16,12 +16,11 @@ export const FooterWrapper = styled.footer`
   font-family: 'Roboto';
 `;
 
-export const CopyrightData = styled.p``;
-
 export const DeveloperData = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
+  font-family: 'Arial';
 `;
 
 export const DeveloperLink = styled.link``;

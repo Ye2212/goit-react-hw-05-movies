@@ -38,6 +38,7 @@ export const Title = styled.h2`
   font-size: 30px;
   color: #000000d1;
   margin-bottom: 20px;
+  font-family: 'Arial';
   //   @media (min-width: 768px) {
   //     font-size: 25px;
   //     margin-bottom: 0;
@@ -52,6 +53,7 @@ export const SubTitle = styled.h3`
   font-size: 18px;
   color: #00000096;
   margin-bottom: 10px;
+  font-family: 'Arial';
   // @media (min-width: 768px) {
   //   font-size: 25px;
   //   margin-bottom: 0;
@@ -64,6 +66,7 @@ export const SubTitle = styled.h3`
 export const InfoText = styled.p`
   font-weight: 400;
   font-size: 15px;
+  font-family: 'Arial';
   margin-bottom: 20px;
   // @media (min-width: 1440px) {
   //   font-size: 18px;
@@ -74,6 +77,7 @@ export const GoBackBtn = styled.button`
   width: 80px;
   height: 30px;
   font-size: 12px;
+  font-family: 'Arial';
   background-color: #000000d1;
   color: white;
   border: none;
@@ -104,6 +108,7 @@ export const AditionalText = styled.p`
   color: white;
   font-size: 20px;
   font-weight: 500;
+  font-family: 'Arial';
 `;
 export const ExtraPagesList = styled.ul``;
 export const Item = styled.li`
@@ -122,6 +127,7 @@ export const Item = styled.li`
 `;
 export const StyledLink = styled(NavLink)`
   font-size: 18px;
+  font-family: 'Arial';
   color: #000000d1;
   display: block;
   margin-bottom: 8px;

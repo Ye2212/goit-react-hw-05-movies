@@ -6,8 +6,6 @@ export const HeaderWrapper = styled.header`
   display: flex;
   width: 100%;
   height: 60px;
-  // position: fixed;
-  // top: 0;
   z-index: 1000;
   background-color: #000000d1;
   font-family: 'Roboto';
@@ -19,6 +17,7 @@ export const LogoWrapper = styled.div`
   margin-left: 40px;
   color: white;
   font-size: 20px;
+  font-family: 'Arial';
   align-items: center;
 `;
 
@@ -50,6 +49,7 @@ export const NavigationItem = styled.li`
 `;
 export const NavigationLink = styled(NavLink)`
   font-size: 14px;
+  font-family: 'Arial';
   color: white;
   transition: opacity 250ms;
   text-decoration: none;
