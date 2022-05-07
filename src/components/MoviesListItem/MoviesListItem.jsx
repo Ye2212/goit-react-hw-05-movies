@@ -8,7 +8,10 @@ function MoviesListItem({ id, title, poster, vote }) {
 
   return (
     <Item>
-      <Link to={`/movies/${id}`} state={{ from: location }}>
+      <Link
+        to={`/movies/${id}`}
+        state={{ from: location.pathname + location.search }}
+      >
         <Info>
           <Title>{title ? title : 'No Title'}</Title>
           <Vote>Vote: {vote}</Vote>

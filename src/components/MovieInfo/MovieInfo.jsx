@@ -55,13 +55,13 @@ export default function MovieInfo({ movieDetails }) {
 
         <ExtraPagesList>
           <Item>
-            <StyledLink to="cast">
+            <StyledLink to="cast" state={location.state}>
               Cast
               <ArrowForward />
             </StyledLink>
           </Item>
           <Item>
-            <StyledLink to="reviews">
+            <StyledLink to="reviews" state={location.state}>
               Reviews
               <ArrowForward />
             </StyledLink>
